@@ -20,6 +20,8 @@ public class DemoApplicationTests {
 
     @Test
     public void contextLoads() {
+        //如何使用RedisTemplate访问Redis数据结构
+        //https://www.jianshu.com/p/7bf5dc61ca06
         SetOperations<String, Object> op = redisTemplate.opsForSet();
         op.add("setData", Lists.newArrayList("java", "c++").toArray());
         System.out.println(op.members("setData"));
